@@ -8,11 +8,6 @@ from pathlib import Path
 # BASE DIR
 # --------------------------------------------------
 BASE_DIR = Path(__file__).resolve().parent.parent
-
-
-# --------------------------------------------------
-# SECURITY
-# --------------------------------------------------
 SECRET_KEY = 'django-insecure-ji0&8tv$ro@yf-lra_u1f=*@%q$f73#lp4*f2gtl+*c)7&lwkh'
 
 DEBUG = False
@@ -35,18 +30,9 @@ INSTALLED_APPS = [
     'django_extensions',
     'drf_spectacular',
     'rest_framework_simplejwt',
-
-    # SILK (UNCONDITIONAL – because urls.py uses it)
     'silk',
-
-    # Local apps
     'courses',
 ]
-
-
-# --------------------------------------------------
-# MIDDLEWARE
-# --------------------------------------------------
 MIDDLEWARE = [
     'silk.middleware.SilkyMiddleware',   # MUST be first
     'django.middleware.security.SecurityMiddleware',
@@ -161,3 +147,4 @@ SPECTACULAR_SETTINGS = {
 # DEFAULT PK
 # --------------------------------------------------
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
